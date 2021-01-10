@@ -1,0 +1,40 @@
+{
+'seed':7, #for the simulator build process
+'n_trials': 50,
+'n_processes':1,
+'dt':0.001, #timestep
+'dt_sample':0.01, #timestep for data recording through probes
+'t_cue':1, #duration of cue presentation
+'t_delay':14.0, #duration of delay period between cue and decision
+'misperceive':0.1, #chance of failing to perceive the cue, causing no info to go into WM
+
+'neurons_inputs':250, #neurons for the inputs ensemble
+'neurons_wm':1500, #neurons for workimg memory ensemble
+'neurons_decide':250, #neurons for decision or basal ganglia
+'time_scale':0.2, #how fast does the 'time' dimension accumulate in WM neurons
+'cue_scale':1.0, #how strong is the cueulus from the visual system
+'tau':0.02, #synaptic time constant between ensembles
+'tau_wm':0.105, #synaptic time constant on recurrent connection in wm (ms)(NMDA) The Impact of NMDA Receptor Blockade on Human Working Memory-Related Prefrontal Function and Connectivity
+'noise_wm':0.005, #std of full-spectrum white noise inject into wm.neurons
+'noise_decision':0.0295, #std of added gaussian noise in the default decision procedure; 
+
+'decision_type':'default', #decision procedure: 'default', 'basal_ganglia'
+'drug_type':'neural', #drug simulation: 'neural','functional','biophysical'				
+'drugs':['Regular'], #names of the of drugs to simulate, see dicts below
+'drug_effect_neural':{'Regular':0.0}, #mean of cue onto wm.neurons
+'drug_effect_biophysical':{'Regular':[1.0,1.0]}, #k_gain, k_bias
+'drug_effect_functional':{'Regular':1.0}, #k_multiply
+
+'enc_min_cutoff':0.3, #minimum cutoff for "weak" encoders in preferred directions
+'enc_max_cutoff':0.6, #maximum cutoff for "weak" encoders in preferred directions
+'sigma_smoothing':0.005, #gaussian smoothing applied to spike data to calculate firing rate
+'frac':0.04, #fraction of neurons in WM to add to firing rate dataframe and plot
+'days_to_simulate': [0, 600, 1200, 1800, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000], #which days to simulate
+'DBS': False,
+'DBS pulsewidth': .0001, #In microseconds.
+'DBS amplitude': .6, #Normalized 0-1 NOT VOLTAGE
+'DBS frequency': 130, #Hz
+}
+
+
+
